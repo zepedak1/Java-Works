@@ -1,48 +1,57 @@
 public class Invoice
 {
-    private int itemnumber, quantity;
-    private String name;
-    private double price;
-    public void setItemNumber(int number)
+    private int number, month = 0, day = 0, year = 0;
+    private double balance;
+    public void setInvoice(int number)
     {
-	itemnumber = number;
+	if(number < 1000)
+	    this.number = 0;
+	else
+	    this.number = number;
     }
-    public void setQuantity(int number)
+    public void setBalance(double number)
     {
-	quantity = number;
+	balance = number;
     }
-    public void setName(String nombre)
+    public void setMonth(int number)
     {
-	name = nombre;
+	if(number < 1 || number > 12)
+	    month = 0;
+	else
+	    month = number;
     }
-    public void setPrice(double number)
+    public void setDay(int number)
     {
-	price = number;
+	if(number < 1 || number > 31)
+	    day = 0;
+	else
+	    day = number;
     }
-    public int getItemNumber()
+    public void setYear(int number)
     {
-	return itemnumber;
+	if(number < 2005 || number > 2012)
+	    year = 0;
+	else
+	    year = number;
     }
-    public int getQuantity()
+    public int getInvoice()
     {
-	return quantity;
+	return number;
     }
-    public String getName()
+    public double getBalance()
     {
-	return name;
+	return balance;
     }
-    public double getPrice()
+    public int getMonth()
     {
-	return price;
+	return month;
     }
-    public void displayLine()
+    public int getDay()
     {
-	double cost;
-	cost = price * quantity;
-	System.out.println("Item number: " + itemnumber);
-	System.out.println("Name: " + name);
-	System.out.println("Quantity: " + quantity);
-	System.out.println("Price: $" + price);
-	System.out.println("Total Cost: $" + cost);
+	return day;
+    }
+    public int getYear()
+    {
+	return year;
     }
 }
