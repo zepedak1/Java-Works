@@ -2,11 +2,15 @@ public class Interest
 {
     public static void main(String[] args)
     {
-	double futureamount, principal, rate, time;
-	principal = 1000;
-	rate = 0.05;
-	time = 1;
-	futureamount = principal * rate * time;
-	System.out.println("Based on a princiapl of " + principal + ", a rate of " + rate * 100 + "%, and a time of " + 1 + " year; your money total would become:\n$" + (futureamount + principal));
+	double value = 1000, percent = 0.05, time = 1, total;
+	total = interest(value, percent, time);
+	System.out.println("With an invested $" + value + ", an interest of " + percent + "% and a total time of " + time);
+	System.out.println("Your total with interest is: " + total);
+    }
+    public static double interest(double value, double percent, double time)
+    {
+	double total;
+	total = value * (1 + (percent * time));
+	return total;
     }
 }
